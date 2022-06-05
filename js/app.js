@@ -1,4 +1,3 @@
-
 const utilitesObj = [
   { text: "داشبورد", icon: "fa-home" },
   { text: "پیام ها", icon: "fa-comment-dots" },
@@ -6,8 +5,32 @@ const utilitesObj = [
   { text: "گزارش ها", icon: "fa-chart-pie" },
   { text: "تنظیمات", icon: "fa-gear" },
 ];
+
+const formItems = [
+  "IdPort",
+  "IdDepartment",
+  "IdCompany",
+  "IdTheme",
+  "IdCertBase",
+  "IdProjectType",
+  "Subject",
+  "Date",
+  "Number",
+  "DateStart",
+  "DateEnd",
+  "ServiceClientName",
+  "ProjectLocation",
+  "Note",
+  "Extend",
+  "SezAttachment",
+  "EcoAttachment",
+  "EmployeesCount",
+  "InvalidationType",
+  "Rowkeeper",
+];
+
 $(document).ready(function () {
-    let sideBar = "";
+  let sideBar = "";
   utilitesObj.map((util) => {
     sideBar += `
     <li class="my-2">
@@ -26,9 +49,23 @@ $(document).ready(function () {
     $(".utilites").html(sideBar);
   });
 
+
   $(".edit-form").submit(function (event) {
     event.preventDefault();
-    var inputValue = $(".edit").val();
-    $(".company-name").text(inputValue);
   });
+
+  function inputBuilder() {
+    let inputModalFields = "";
+    formItems.map((elem) => {
+      inputModalFields += `
+      <div class="my-3 shadow-lg p-3">
+      <label for=${elem}>ویرایش ${elem} </label>
+      <input class="form-control" id=${elem} />
+      </div>
+    `;
+    });
+    $(".form-body").html(inputModalFields);
+  }
+
+  $("#editModal").click(inputBuilder());
 });

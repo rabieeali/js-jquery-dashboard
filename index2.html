@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>داشبورد</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery.js"></script>
+  </head>
+
+  <body>
+    <div class="">
+      <div class="row g-0">
+        <!-- sidebar -->
+        <div class="col-2">
+          <div class="bg-primary p-2 vh-100">
+            <img class="img-fluid" src="img/logo.png" alt="logo" />
+            <div class="mt-5">
+              <ul class="utilites list-unstyled p-0 text-center"></ul>
+            </div>
+          </div>
+        </div>
+        <!-- end of sidebar -->
+        <div class="col-10">
+          <nav class="navbar p-2 bg-dark-blue">
+            <div class="container-fluid">
+              <div class="pe-4">
+                <img
+                  class="img-user img-thumbnail shadow-lg"
+                  src="img/user.png"
+                />
+                <div class="flex flex-column text-white float-start pe-3 mt-3">
+                  <h3 class="fw-bold">علی ربیعی</h3>
+                  <h6>کاربر برنامه نویس</h6>
+                </div>
+              </div>
+              <div
+                style="direction: ltr"
+                class="w-25 input-group ps-4 float-end"
+              >
+                <button
+                  class="btn btn-secondary"
+                  type="button"
+                  id="button-addon1"
+                >
+                  <i class="fa fa-search"></i>
+                </button>
+                <input
+                  type="text"
+                  class="text-end form-control"
+                  placeholder="شناسه ملی شرکت را وارد کنید"
+                />
+              </div>
+            </div>
+          </nav>
+          <!-- table 1 -->
+          <div class="container mt-5 p-3">
+            <table class="text-center table table-striped">
+              <thead class="bg-dark text-white">
+                <tr>
+                  <th scope="col">ویرایش</th>
+                  <th scope="col">آیدی بندر</th>
+                  <th scope="col">موضوع قرار داد</th>
+                  <th scope="col">شماره قرار داد</th>
+                  <th scope="col">تاریخ قرار داد</th>
+                  <th scope="col">تاریخ شروع</th>
+                  <th scope="col">تاریخ پایان</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <i
+                      id="editModal"
+                      class="cursor-pointer fa fa-edit"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                    ></i>
+                    <!-- Modal -->
+                    <div
+                      class="modal fade"
+                      id="exampleModal"
+                      tabindex="-1"
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5
+                              class="modal-title m-auto"
+                              id="exampleModalLabel"
+                            >
+                              ویرایش
+                            </h5>
+                          </div>
+                          <div class="modal-body">
+                            <form method="post" action="/Projects/Edit" class="edit-form">
+                              <div class="form-body"></div>
+                              <div class="d-flex justify-content-evenly">
+                                <button
+                                  class="btn btn-primary mt-3"
+                                  data-bs-dismiss="modal"
+                                >
+                                  ثبت تغییرات
+                                </button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td>IdPort</td>
+                  <td>Subject</td>
+                  <td>Number</td>
+                  <td>Date</td>
+                  <td>DateStart</td>
+                  <td>DateEnd</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="js/app.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/all.min.js"></script>
+  </body>
+</html>
